@@ -1,0 +1,3 @@
+const QuizzPage = () => {
+  return <></>;
+};

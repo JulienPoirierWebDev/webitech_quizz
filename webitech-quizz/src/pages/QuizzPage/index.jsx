@@ -1,3 +1,5 @@
 const QuizzPage = () => {
-  return <></>;
+  return <>QuizzPage</>;
 };
+
+export default QuizzPage;

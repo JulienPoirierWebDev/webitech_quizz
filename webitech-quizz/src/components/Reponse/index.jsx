@@ -1,4 +1,5 @@
 import { PropTypes } from "prop-types";
+import styles from "./Reponse.module.css";
 
 const Reponse = ({
   answer,
@@ -7,25 +8,31 @@ const Reponse = ({
   isAnswered,
   userAnswer,
 }) => {
-  const answerStyle = {};
+  const classeNames = [styles.reponse];
   const isCorrectAnswer = answer === question.correct_answer;
 
   if (isAnswered && isCorrectAnswer) {
-    answerStyle.backgroundColor = "green";
+    classeNames.push(styles.correctAnswer);
     console.log(userAnswer);
-  } else if (isAnswered && !isCorrectAnswer && answer === userAnswer) {
-    answerStyle.backgroundColor = "red";
+  }
+
+  if (isAnswered && !isCorrectAnswer && answer === userAnswer) {
+    classeNames.push(styles.wrongAnswer);
+  }
+
+  if (isAnswered) {
+    classeNames.push(styles.disabled);
   }
 
   return (
-    <p
+    <div
       key={answer}
-      style={answerStyle}
+      className={classeNames.join(" ")}
       onClick={() => {
         handleAnswerClick(answer);
       }}
       dangerouslySetInnerHTML={{ __html: answer }}
-    ></p>
+    ></div>
   );
 };
 

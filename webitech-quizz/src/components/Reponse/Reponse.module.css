@@ -1,0 +1,35 @@
+.reponse {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 3px #ccc;
+  width: 100%;
+  max-width: 500px;
+  transition: all 0.3s ease-out;
+}
+
+.reponse:not(.disabled) {
+  cursor: pointer;
+}
+
+.reponse:not(.disabled):hover {
+  transform: rotate(2deg);
+}
+
+.reponse:not(.disabled):hover {
+  background-color: #f5f5f5;
+}
+
+.correctAnswer {
+  background-color: #b3ffb3;
+}
+
+.wrongAnswer {
+  background-color: #ff9999;
+}
